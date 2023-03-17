@@ -1,0 +1,32 @@
+* {
+  text-align: center;
+
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  width: 350px;
+  margin-top: 25px;
+  border: 7px solid gray;
+  padding: 52px;
+  border-radius: 15px;
+  background-color: beige;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul span {
+  margin-left: 5 px;
+}
+
+input {
+  text-align: center;
+  padding: 5px;
+}

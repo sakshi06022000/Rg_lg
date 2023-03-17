@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RG</title>
+    <script>
+        //P@ssw0rd
+        function registration() {
+            var email = document.getElementById("em").value;
+            var uname = document.getElementById("un").value;
+            var pwd = document.getElementById("pd").value;
+            var cpwd = document.getElementById("ps").value;
+
+            var pwdLength = document.getElementById("pd").value.length;
+            console.log(pwdLength);
+            //email id expression code
+            var pwd_expression = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/;
+            var letters = /^[A-Za-z]+$/;
+            var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+            localStorage.setItem("email", email)
+            localStorage.setItem("username", uname)
+            localStorage.setItem("savepass", pwd)
+            localStorage.setItem("savepass1", cpwd)
+
+            console.log(localStorage);
+
+            // window.location.href = ("lg.html");
+
+            if (email == '') {
+                alert('Please enter your user email id');
+            }
+            else if (!filter.test(email)) {
+                alert('Invalid email');
+            }
+            else if (uname == '') {
+                alert('Please enter the user name.');
+            }
+            else if (!letters.test(uname)) {
+                alert('User name field required only alphabet characters');
+            }
+            else if (pwd == '') {
+                alert('Please enter Password');
+            }
+            else if (cpwd == '') {
+                alert('Enter Confirm Password');
+            }
+            else if (!pwd_expression.test(pwd)) {
+                alert('Upper case, Lower case, Special character and Numeric letter are required in Password filed');
+            }
+            else if (pwd != cpwd) {
+                alert('Password not Matched');
+            }
+            // else if (pd.length <6 || pd.length > 12)
+            //     {
+            //         alert("Password length must be in between 6 to 12");
+            //     }
+            else if (document.getElementById("pd").value.length < 7) {
+                alert('Password minimum length is 7');
+            }
+            else if (document.getElementById("pd").value.length > 12) {
+                alert('Password max length is 12');
+            }
+            else {
+                window.location.href = ("lg.html")
+            }
+        }
+        function clearFunc() {
+            document.getElementById("em").value = "";
+            document.getElementById("un").value = "";
+            document.getElementById("pd").value = "";
+            document.getElementById("ps").value = "";
+        }
+    </script>
+</head>
+
+<body>
+    <style>
+        * {
+            text-align: center;
+            justify-content: center;
+            background-color: beige;
+        }
+
+        .container {
+            text-align: center;
+            border: 1px solid grey;
+            width: 400px;
+            height: 300px;
+            padding: 30px;
+            margin: 100px auto;
+            justify-content: center;
+            align-items: start;
+        }
+
+        /*         
+        input {
+            text-align: center;
+            column-gap: 100px;
+        } */
+        #main table {
+            font-family: "Comic Sans MS", cursive;
+        }
+
+        /* css code for textbox */
+        #main .tb {
+            height: 28px;
+            width: 230px;
+            border: 1px solid #f26724;
+            color: #fd7838;
+            font-weight: bold;
+            border-left: 5px solid #f7f7f7;
+            opacity: 0.9;
+        }
+
+        #main .tb:focus {
+            height: 28px;
+            border: 1px solid #f26724;
+            outline: none;
+            border-left: 5px solid #f7f7f7;
+        }
+    </style>
+
+    <div class="container">
+        <div class="reg">
+            <h1>Create an Account</h1>
+            <div class="row">
+                <table cellspacing="2" align="center" cellpadding="8" border="0">
+
+                    <tr>
+                        <td align="right">Enter Email ID :</td>
+                        <td><input type="text" placeholder="Enter Email ID here" id="em" class="tb" /></td>
+                    </tr>
+                    <tr>
+                        <td align="right">Enter Username :</td>
+                        <td><input type="text" placeholder="Enter Username here" id="un" class="tb" /></td>
+                    </tr>
+                    <tr>
+                        <td align="right">Enter Password :</td>
+                        <td><input type="password" placeholder="Enter Password here" id="ps" class="tb" /></td>
+                    </tr>
+                    <tr>
+                        <td align="right">Enter Confirm Password :</td>
+                        <td><input type="password" placeholder="Enter Password here" id="pd" class="tb" /></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="reset" value="Clear Form" onclick="clearFunc()" id="res" class="btn" />
+                            <input type="submit" value="Create Account" class="btn" onclick="registration()">
+                        </td>
+                    </tr>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

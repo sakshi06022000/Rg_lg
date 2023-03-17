@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function login() {
+            var username = localStorage.getItem("username");
+            var savepass = localStorage.getItem("savepass");
+            var us = document.getElementById("un").value;
+            var ps = document.getElementById("pd").value;
+            if (us == username && ps == savepass) {
+                window.location.href = ("reg.html")
+            }
+            else {
+                confirm("Please enter valid input")
+            }
+        }
+        function clearFunc() {
+            document.getElementById("un").value = "";
+            document.getElementById("pd").value = "";
+        }
+        function forgetpassword() {
+
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <style>
+        * {
+            text-align: center;
+            justify-content: center;
+            background-color: beige;
+        }
+
+        .container {
+            text-align: center;
+            border: 1px solid grey;
+            width: 400px;
+            height: 250px;
+            padding: 35px;
+            margin: 150px auto;
+            justify-content: center;
+            align-items: start;
+        }
+
+        .row {
+            text-align: center;
+        }
+
+        .button {
+            border: 2px solid green;
+            text-align: center;
+            justify-content: center;
+            align-items: start;
+        }
+    </style>
+    <div class="container">
+        <div class="reg">
+            <h1>Login Form</h1>
+            <div class="row">
+                <table cellspacing="2" align="center" cellpadding="8" border="0">
+                    <tr>
+                        <td align="right">Enter Username :</td>
+                        <td><input type="text" placeholder="Enter Username here" id="t1" class="tb" /></td>
+                    </tr>
+                    <tr>
+                        <td align="right">Enter Password :</td>
+                        <td><input type="password" placeholder="Enter Password here" id="t2" class="tb" /></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button onclick="clearFunc()">Reset </button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+                            <button onclick="window.location='t.html'">Login</button> 
+                        </td>
+                    </tr>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
